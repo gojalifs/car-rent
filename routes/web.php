@@ -23,7 +23,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('login', [AuthController::class, 'index'])->name('login');
 Route::post('do-login', [AuthController::class, 'login'])->name('do-login');
-Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('register', [AuthController::class, 'showRegisterPage'])->name('register');
 Route::post('do-register', [AuthController::class, 'registerUser'])->name('do-register');
 
@@ -38,6 +37,7 @@ Route::middleware([Authenticate::class])->group(function () {
         Route::post('add-car', [CarsController::class, 'store'])->name('owner.add-car');
         Route::post('update-car', [CarsController::class, 'update'])->name('owner.update-car');
         Route::post('delete-car', [CarsController::class, 'destroy'])->name('owner.delete-car');
+        Route::get('logout', [AuthController::class, 'logout'])->name('logout');
     });
 
     /// User
