@@ -16,10 +16,7 @@ return new class extends Migration
             $table->string('merk', 50);
             $table->string('type', 50);
             $table->string('plat', 15);
-            $table->string('plat_month', 2);
-            $table->string('plat_year', 2);
             $table->unsignedInteger('fee');
-            $table->unsignedInteger('stock');
             $table->timestamps();
         });
     }
