@@ -35,7 +35,9 @@ Route::middleware([Authenticate::class])->group(function () {
         Route::get('dashboard', [DashboardAdminController::class, 'index'])->name('owner.dashboard');
         Route::get('cars', [CarsController::class, 'index'])->name('owner.cars');
         Route::get('rentals', [rentalsController::class, 'index'])->name('owner.rentals');
-        Route::get('add-car', [CarsController::class, 'store'])->name('owner.add-car');
+        Route::post('add-car', [CarsController::class, 'store'])->name('owner.add-car');
+        Route::post('update-car', [CarsController::class, 'update'])->name('owner.update-car');
+        Route::post('delete-car', [CarsController::class, 'destroy'])->name('owner.delete-car');
     });
 
     /// User
